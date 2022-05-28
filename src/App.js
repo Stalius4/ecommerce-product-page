@@ -1,15 +1,12 @@
 import styled from "styled-components"
 import './App.css';
+import NavBar from "./utilities/navBar";
 
 function App() {
   return (
     <div>
 
-    Collections
-    Men
-    Women
-    About
-    Contact
+<NavBar></NavBar>
   
     Sneaker Company
   
