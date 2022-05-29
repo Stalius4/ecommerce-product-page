@@ -1,13 +1,15 @@
 import styled from "styled-components"
 import './App.css';
-import NavBar from "./utilities/navBar";
+import NavBar  from "./utilities/navBar";
+import React,  {useState}from 'react';
 
 function App() {
+
   return (
     <div>
 
-<NavBar></NavBar>
-  
+<NavBar  ></NavBar>
+
     Sneaker Company
   
     Fall Limited Edition Sneakers
