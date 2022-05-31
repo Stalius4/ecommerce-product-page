@@ -22,4 +22,7 @@ export default App;
 
 const TextGalleryFlex = styled.div`
 
-display:flex`
+display:flex;
+justify-content:center;
+gap: 100px
+`

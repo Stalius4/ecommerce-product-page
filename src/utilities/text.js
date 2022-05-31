@@ -8,13 +8,13 @@ const Text = ()  => {
 
 
     return(
-<div>
-        <div>Sneaker Company</div>
+<TextFlex>
+        <OrangeTitle>SNEAKER COMPANY</OrangeTitle>
   
-        <h1>Fall Limited Edition Sneakers</h1>
+        <BlackTitle>Fall Limited Edition Sneakers</BlackTitle>
       
-       <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-        durable rubber outer sole, they’ll withstand everything the weather can offer.</p> 
+       <Para>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</Para> 
       
         $125.00
         50%
@@ -23,8 +23,35 @@ const Text = ()  => {
         0
         Add to cart
         
-        </div>
+        </TextFlex>
     )
 }
 
 export default Text
+
+const TextFlex = styled.div`
+
+margin-top:180px;
+width:430px;
+
+`
+const OrangeTitle = styled.div`
+color: orange;
+font-weight: 600;
+font-size: 16px;
+font-family: 'Kumbh Sans', sans-serif;
+`
+
+const BlackTitle= styled.h1`
+font-weight: 600;
+font-size: 32px;
+font-family: 'Kumbh Sans', sans-serif;
+`
+
+const Para = styled.p`
+font-weight: 400;
+font-size: 16px;
+font-family: 'Kumbh Sans', sans-serif;
+opacity: 0.60;
+
+`

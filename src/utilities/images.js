@@ -14,14 +14,6 @@ const Gallery = () => {
 const [number, setNumber] = useState (1)
 
 
-const change = ()=>{
-
-
-}
-
-
-
-
     return(<ImageGallery>
         <ImageBig src={ number === 1 ? image1: number === 2 ? image2 : number ===3 ? image3 :image4 } alt="Image1" />
     <ImageFlex>
@@ -37,7 +29,7 @@ const change = ()=>{
 
 export default Gallery;
 const ImageGallery = styled.div`
-margin:50px 50px 0px 400px;
+margin:50px 0px 0px 0px;
 `
 
 const ImageSmall = styled.img`

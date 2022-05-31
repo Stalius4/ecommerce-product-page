@@ -22,7 +22,7 @@ const NavBar = () => {
             <Cart src={cart} alt="Logo" onClick={() =>setChangeClass(!changeClass)}/>
             <Avatar src={avatar} alt="Logo" />
         </NavFlex>
-        <div className={changeClass ? "basket": "basketnone"}>
+        <div className={changeClass ? "basketnone": "basket"}>
             <CartTop>Cart</CartTop>
             <CartBottom>Your cart is empty.</CartBottom> 
         </div>
