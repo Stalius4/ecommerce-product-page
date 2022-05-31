@@ -3,10 +3,13 @@ import logo from "../images/logo.svg";
 import cart from "../images/icon-cart.svg"
 import avatar from "../images/image-avatar.png"
 import React,  {useState}from 'react';
-
-const NavBar = () => {
+import image1 from "../images/image-product-1-thumbnail.jpg"
+import bin from "../images/icon-delete.svg"
+const NavBar = (props) => {
 
     const [changeClass, setChangeClass]= useState(true)
+ 
+
 
     return(
     <div>
@@ -24,12 +27,22 @@ const NavBar = () => {
         </NavFlex>
         <div className={changeClass ? "basketnone": "basket"}>
             <CartTop>Cart</CartTop>
-            <CartBottom>Your cart is empty.</CartBottom> 
+            {(props.cartQuantity ===0 ?  <CartBottom>Your cart is empty.</CartBottom>  :      <BasketGrid>
+                <ShoeImage src={image1} alt="image1"></ShoeImage>
+                <Title>Fall Limited Edition Sneakers</Title>
+                <ShoePrice>$125.00 x {props.cartQuantity} ${props.cartQuantity * 125}.00</ShoePrice>
+                <BinIcon  onClick={() =>props.setCartQuantity(0)} src={bin} alt="image1"></BinIcon>
+            </BasketGrid>)}
+           
+       
         </div>
             
     </div>
     )
 }
+
+
+
 
 export default NavBar
 
@@ -122,4 +135,48 @@ font-size: 16px;
   width: 100%;
   height: 50%;
   opacity: 0.55;
+`
+
+const BasketGrid = styled.div`
+display: grid;
+margin: 20px 16px;
+grid-template-columns: 60px 160px 20x ;
+  grid-template-rows: 1fr 1fr ;
+  grid-template-areas:
+
+    "content1 content2 content3 "
+    "content1 content4 content3 ";
+  grid-gap: 0.2rem;
+`
+
+const ShoeImage = styled.img`
+height: 50px;
+grid-area:content1;
+justify-self: center;
+align-self: center;
+border-radius: 5px;
+`
+
+const Title = styled.div`
+font-weight: 400;
+font-size: 16px;
+font-family: 'Kumbh Sans', sans-serif;
+opacity: 0.60;
+grid-area:content2;
+justify-self: start;
+align-self: center;
+`
+const ShoePrice = styled.div`
+font-weight: 400;
+font-size: 16px;
+font-family: 'Kumbh Sans', sans-serif;
+opacity: 0.60;
+grid-area:content4;
+justify-self: start;
+align-self: center;
+`
+const BinIcon = styled.img`
+justify-self: center;
+align-self: center;
+grid-area:content3;
 `

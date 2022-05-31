@@ -8,6 +8,7 @@ import image1 from "../images/image-product-1.jpg"
 import image2 from "../images/image-product-2.jpg"
 import image3 from "../images/image-product-3.jpg"
 import image4 from "../images/image-product-4.jpg"
+import '../App.css';
 
 const Gallery = () => {
 
@@ -17,7 +18,7 @@ const [number, setNumber] = useState (1)
     return(<ImageGallery>
         <ImageBig src={ number === 1 ? image1: number === 2 ? image2 : number ===3 ? image3 :image4 } alt="Image1" />
     <ImageFlex>
-        <ImageSmall src={imageSmall1} alt="image Small" onClick={() =>(setNumber(1))} />
+        <ImageSmall  className="imagess" src={imageSmall1} alt="image Small" onClick={() =>(setNumber(1))} />
         <ImageSmall src={imageSmall2} alt="image Small" onClick={() =>(setNumber(2))}/>
         <ImageSmall src={imageSmall3} alt="image Small" onClick={() =>(setNumber(3))}/>
         <ImageSmall src={imageSmall4} alt="image Small" onClick={() =>(setNumber(4))}/>

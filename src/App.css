@@ -2,7 +2,7 @@
   position:absolute;
   background-color: rgb(254, 255, 255);
   height: 220px;
-  width: 300px;
+  width: 360px;
   right:10%;
   margin-top: -35px;
   font-weight: 400;
@@ -12,4 +12,13 @@
 }
 .basketnone{
   display: none;
+}
+
+
+.imagess:hover{
+  opacity: 0.5;
+}
+
+.imagess:focus{
+  opacity: 0.8
 }
