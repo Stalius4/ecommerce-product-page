@@ -27,5 +27,5 @@ const TextGalleryFlex = styled.div`
 
 display:flex;
 justify-content:center;
-gap: 100px
+gap: 100px;
 `
