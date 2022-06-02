@@ -155,8 +155,10 @@ font-size: 18px;
 font-family: 'Kumbh Sans', sans-serif;
 color:white;
 margin-left: 15px;
-background-image: url(${cart});
+background-image: url(${cart}) ;
+
 background-repeat: no-repeat;
 background-position: 55px;
+cursor: pointer;
 
 `

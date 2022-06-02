@@ -56,7 +56,7 @@ export default NavBar;
 const NavFlex = styled.div`
   align-items: baseline;
   margin: auto;
-  margin-top: 2%;
+
   display: flex;
   padding-bottom: 32px;
   border-bottom: #9495965f 1px solid;

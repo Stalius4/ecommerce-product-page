@@ -8,15 +8,19 @@ import image1 from "../images/image-product-1.jpg"
 import image2 from "../images/image-product-2.jpg"
 import image3 from "../images/image-product-3.jpg"
 import image4 from "../images/image-product-4.jpg"
+import closeBtn from "../images/icon-close.svg"
 import '../App.css';
 
-const Gallery = () => {
+const Gallery = (props) => {
 
 const [number, setNumber] = useState (1)
 
 
+
+
+
     return(<ImageGallery>
-        <ImageBig src={ number === 1 ? image1: number === 2 ? image2 : number ===3 ? image3 :image4 } alt="Image1" />
+        <ImageBig src={ number === 1 ? image1: number === 2 ? image2 : number ===3 ? image3 :image4 } alt="Image1" onClick={() =>props.setToggle(!props.toggle)} />
     <ImageFlex>
         <ImageSmall  className="imagess" src={imageSmall1} alt="image Small" onClick={() =>(setNumber(1))} />
         <ImageSmall src={imageSmall2} alt="image Small" onClick={() =>(setNumber(2))}/>
@@ -24,11 +28,83 @@ const [number, setNumber] = useState (1)
         <ImageSmall src={imageSmall4} alt="image Small" onClick={() =>(setNumber(4))}/>
 
     </ImageFlex> 
+
+   
     </ImageGallery> )
      
 }
 
-export default Gallery;
+const FullGallery = (props) => {
+
+    const [number, setNumber] = useState (1)
+
+
+    return (
+      <FullGall>
+        <ImageGalleryFull>
+            <CloseBtn onClick={() =>props.setToggle(!props.toggle)}></CloseBtn>
+          <ImageBig
+            src={number === 1 ? image1: number === 2 ? image2: number === 3 ? image3 : image4}alt="Image1" />
+          <ImageFlex>
+            <ImageSmall
+              className="imagess"
+              src={imageSmall1}
+              alt="image Small"
+              onClick={() => setNumber(1)}
+            />
+            <ImageSmall
+              src={imageSmall2}
+              alt="image Small"
+              onClick={() => setNumber(2)}
+            />
+            <ImageSmall
+              src={imageSmall3}
+              alt="image Small"
+              onClick={() => setNumber(3)}
+            />
+            <ImageSmall
+              src={imageSmall4}
+              alt="image Small"
+              onClick={() => setNumber(4)}
+            />
+          </ImageFlex>
+        </ImageGalleryFull>
+      </FullGall>
+    );
+
+
+
+}
+ const CloseBtn = styled.div`
+ filter: invert(24%) sepia(76%) saturate(6157%) hue-rotate(2deg) brightness(108%) contrast(106%);;
+ width: 20px;
+ height: 20px;
+ background-image:url(${closeBtn});
+ background-repeat: no-repeat;
+ background-position: center;
+margin-left: 470px;
+margin-bottom: -15px;
+ `
+const FullGall = styled.div`
+position:absolute;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.951);
+z-index: 1;
+
+`
+
+
+
+export  {Gallery, FullGallery};
+
+
+const ImageGalleryFull = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
 const ImageGallery = styled.div`
 margin:50px 0px 0px 0px;
 `
@@ -39,11 +115,12 @@ border-radius: 15px;
 height: 100px;
 width: 100px;
 border:solid white 3px;
+cursor: pointer;
 &:active{
     border:solid hsl(26, 100%, 55%) 3px
 }
 &:hover{
-   background-image: rgba(255, 255, 255, .8);
+   opacity:0.55;
 }
 
 
@@ -59,6 +136,7 @@ const ImageBig  = styled.img`
 height:490px;
 border-radius: 15px;
 margin: 30px 0px;
+cursor: pointer;
 `
 
 
