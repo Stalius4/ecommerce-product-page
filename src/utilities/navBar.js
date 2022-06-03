@@ -113,7 +113,9 @@ const Avatar = styled.img`
   border: solid white 3px;
   &:hover {
     border: solid hsl(26, 100%, 55%) 3px;
-    border-radius: 70%;
+    border-radius: 50%  ;
+   
+    
   }
 `;
 const CartTop = styled.div`

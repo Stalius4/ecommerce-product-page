@@ -15,12 +15,6 @@
 }
 
 
-.imagess:hover{
-  opacity: 0.5;
-
-background-color: #ffffff;
-}
-
 .imagess:focus{
   opacity: 0.8
 }

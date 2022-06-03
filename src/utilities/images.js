@@ -9,6 +9,8 @@ import image2 from "../images/image-product-2.jpg"
 import image3 from "../images/image-product-3.jpg"
 import image4 from "../images/image-product-4.jpg"
 import closeBtn from "../images/icon-close.svg"
+import previousBtn from "../images/icon-previous.svg"
+import nextBtn from "../images/icon-next.svg"
 import '../App.css';
 
 const Gallery = (props) => {
@@ -16,18 +18,15 @@ const Gallery = (props) => {
 const [number, setNumber] = useState (1)
 
 
-
-
-
-    return(<ImageGallery>
+    return(
+    <ImageGallery>
         <ImageBig src={ number === 1 ? image1: number === 2 ? image2 : number ===3 ? image3 :image4 } alt="Image1" onClick={() =>props.setToggle(!props.toggle)} />
-    <ImageFlex>
-        <ImageSmall  className="imagess" src={imageSmall1} alt="image Small" onClick={() =>(setNumber(1))} />
-        <ImageSmall src={imageSmall2} alt="image Small" onClick={() =>(setNumber(2))}/>
-        <ImageSmall src={imageSmall3} alt="image Small" onClick={() =>(setNumber(3))}/>
-        <ImageSmall src={imageSmall4} alt="image Small" onClick={() =>(setNumber(4))}/>
-
-    </ImageFlex> 
+        <ImageFlex>
+            <ImageSmall src={imageSmall1} alt="image Small" onClick={() =>(setNumber(1))} />
+            <ImageSmall src={imageSmall2} alt="image Small" onClick={() =>(setNumber(2))}/>
+            <ImageSmall src={imageSmall3} alt="image Small" onClick={() =>(setNumber(3))}/>
+            <ImageSmall src={imageSmall4} alt="image Small" onClick={() =>(setNumber(4))}/>
+        </ImageFlex> 
 
    
     </ImageGallery> )
@@ -39,11 +38,38 @@ const FullGallery = (props) => {
     const [number, setNumber] = useState (1)
 
 
+    const nextImage = () => {
+        if (number === 1){
+            setNumber(2)
+        } else if (number === 2) {
+            setNumber(3)
+        }else if  (number === 3) {
+            setNumber(4)
+        }else if (number ===4) {
+            setNumber(1)
+        }
+    }
+
+
+    const previousImage = () => {
+        if (number === 1){
+            setNumber(4)
+        } else if (number === 2) {
+            setNumber(1)
+        }else if  (number === 3) {
+            setNumber(2)
+        }else if (number ===4) {
+            setNumber(3)
+        }
+    }
+
     return (
       <FullGall>
         <ImageGalleryFull>
             <CloseBtn onClick={() =>props.setToggle(!props.toggle)}></CloseBtn>
-          <ImageBig
+            <NextBtn onClick={() =>nextImage()}></NextBtn>
+            <PreviousBtn onClick={() =>previousImage()}></PreviousBtn>
+          <ImageBigGallery
             src={number === 1 ? image1: number === 2 ? image2: number === 3 ? image3 : image4}alt="Image1" />
           <ImageFlex>
             <ImageSmall
@@ -84,6 +110,7 @@ const FullGallery = (props) => {
  background-position: center;
 margin-left: 470px;
 margin-bottom: -15px;
+cursor: pointer;
  `
 const FullGall = styled.div`
 position:absolute;
@@ -93,7 +120,37 @@ background-color: rgba(0, 0, 0, 0.951);
 z-index: 1;
 
 `
+const NextBtn = styled.button`
+position: relative;
+position: absolute;
+top: 247px;
+left: 470px;
+width: 35px;
+height: 35px;
+background-image:url(${nextBtn});
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 50%;
+border: none;
+cursor: pointer;
+`
+const PreviousBtn = styled.button`
+border: none;
+top: 250px;
+left:-17px;
+position: absolute;
+width: 35px;
+height: 35px;
+background-image:url(${previousBtn});
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 50%;
+cursor: pointer;
 
+&:active{
+    
+}
+`
 
 
 export  {Gallery, FullGallery};
@@ -137,6 +194,12 @@ height:490px;
 border-radius: 15px;
 margin: 30px 0px;
 cursor: pointer;
+`
+const ImageBigGallery  = styled.img`
+height:490px;
+border-radius: 15px;
+margin: 30px 0px;
+
 `
 
 
