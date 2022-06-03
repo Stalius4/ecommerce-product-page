@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import minus from "../images/icon-minus.svg"
 import plus from "../images/icon-plus.svg"
-import React,  {useState}from 'react';
 import cart from "../images/icon-cart.svg"
 const Text = (props)  => {
 
