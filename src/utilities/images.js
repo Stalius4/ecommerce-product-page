@@ -71,36 +71,102 @@ const FullGallery = (props) => {
             <PreviousBtn onClick={() =>previousImage()}></PreviousBtn>
           <ImageBigGallery
             src={number === 1 ? image1: number === 2 ? image2: number === 3 ? image3 : image4}alt="Image1" />
-          <ImageFlex>
-            <ImageSmall
-              className="imagess"
-              src={imageSmall1}
-              alt="image Small"
-              onClick={() => setNumber(1)}
-            />
-            <ImageSmall
+          <ImageFlexGallery>
+            <ImageSmallGallery onClick={() => setNumber(1)}></ImageSmallGallery>
+            
+            <ImageSmallGallery2
               src={imageSmall2}
               alt="image Small"
               onClick={() => setNumber(2)}
             />
-            <ImageSmall
+            <ImageSmallGallery3
               src={imageSmall3}
               alt="image Small"
               onClick={() => setNumber(3)}
             />
-            <ImageSmall
+            <ImageSmallGallery4
               src={imageSmall4}
               alt="image Small"
               onClick={() => setNumber(4)}
             />
-          </ImageFlex>
+          </ImageFlexGallery>
         </ImageGalleryFull>
       </FullGall>
     );
 
 
-
 }
+
+
+
+const ImageSmallGallery = styled.button`
+background-image:url(${imageSmall1});
+border-radius: 15px;
+height: 90px;
+width: 90px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall1})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall1})
+}
+`
+const ImageSmallGallery2 = styled.button`
+background-image:url(${imageSmall2});
+border-radius: 15px;
+height: 90px;
+width: 90px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall2})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall2})
+}
+`
+const ImageSmallGallery3 = styled.button`
+background-image:url(${imageSmall3});
+border-radius: 15px;
+height: 90px;
+width: 90px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall3})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall3})
+}
+`
+const ImageSmallGallery4 = styled.button`
+background-image:url(${imageSmall4});
+border-radius: 15px;
+height: 90px;
+width: 90px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall4})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall4})
+}
+`
  const CloseBtn = styled.div`
  filter: invert(24%) sepia(76%) saturate(6157%) hue-rotate(2deg) brightness(108%) contrast(106%);;
  width: 20px;
@@ -174,17 +240,20 @@ width: 100px;
 border:solid white 3px;
 cursor: pointer;
 &:active{
-    border:solid hsl(26, 100%, 55%) 3px
+    border:solid hsl(26, 100%, 55%) 3px;
 }
 &:hover{
    opacity:0.55;
 }
-
-
-
 `
 
 const ImageFlex = styled.div`
+
+display:flex;
+gap: 30px;
+`
+const ImageFlexGallery = styled.div`
+padding-left: 20px;
 display:flex;
 gap: 30px;
 `
