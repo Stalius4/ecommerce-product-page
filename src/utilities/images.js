@@ -22,10 +22,10 @@ const [number, setNumber] = useState (1)
     <ImageGallery>
         <ImageBig src={ number === 1 ? image1: number === 2 ? image2 : number ===3 ? image3 :image4 } alt="Image1" onClick={() =>props.setToggle(!props.toggle)} />
         <ImageFlex>
-            <ImageSmall src={imageSmall1} alt="image Small" onClick={() =>(setNumber(1))} />
-            <ImageSmall src={imageSmall2} alt="image Small" onClick={() =>(setNumber(2))}/>
-            <ImageSmall src={imageSmall3} alt="image Small" onClick={() =>(setNumber(3))}/>
-            <ImageSmall src={imageSmall4} alt="image Small" onClick={() =>(setNumber(4))}/>
+            <ImageSmall  onClick={() =>(setNumber(1))} />
+            <ImageSmall2  onClick={() =>(setNumber(2))}/>
+            <ImageSmall3  onClick={() =>(setNumber(3))}/>
+            <ImageSmall4  onClick={() =>(setNumber(4))}/>
         </ImageFlex> 
 
    
@@ -232,21 +232,79 @@ const ImageGallery = styled.div`
 margin:50px 0px 0px 0px;
 `
 
-const ImageSmall = styled.img`
+const ImageSmall = styled.button`
+background-image:url(${imageSmall1});
 box-sizing: border-box;
 border-radius: 15px;
 height: 100px;
 width: 100px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
 border:solid white 3px;
 cursor: pointer;
-&:active{
+&:focus{
     border:solid hsl(26, 100%, 55%) 3px;
-}
-&:hover{
-   opacity:0.55;
-}
-`
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall1})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall1})
+}`
+const ImageSmall2 = styled.button`
+background-image:url(${imageSmall2});
+box-sizing: border-box;
+border-radius: 15px;
+height: 100px;
+width: 100px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+border:solid white 3px;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall2})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall2})
+}`
 
+const ImageSmall3 = styled.button`
+background-image:url(${imageSmall3});
+box-sizing: border-box;
+border-radius: 15px;
+height: 100px;
+width: 100px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+border:solid white 3px;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall3})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall3})
+}`
+const ImageSmall4 = styled.button`
+background-image:url(${imageSmall4});
+box-sizing: border-box;
+border-radius: 15px;
+height: 100px;
+width: 100px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+border: none;
+border:solid white 3px;
+cursor: pointer;
+&:focus{
+    border:solid hsl(26, 100%, 55%) 3px;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url(${imageSmall4})
+    }    &:hover{
+        background-image:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url(${imageSmall4})
+}`
 const ImageFlex = styled.div`
 
 display:flex;
